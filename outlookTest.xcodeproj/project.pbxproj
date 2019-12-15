@@ -11,6 +11,8 @@
 		FC971D0B23A65F7900103B35 /* OLFIleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D0A23A65F7900103B35 /* OLFIleLoader.swift */; };
 		FC971D0E23A67F7600103B35 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC971D0D23A67F7600103B35 /* Resource.bundle */; };
 		FC971D1123A6867D00103B35 /* OLContactAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D1023A6867D00103B35 /* OLContactAvatarView.swift */; };
+		FC971D1323A6902D00103B35 /* OLImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D1223A6902D00103B35 /* OLImageUtility.swift */; };
+		FC971D1523A6AA1000103B35 /* OLTheadSafeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D1423A6AA1000103B35 /* OLTheadSafeRun.swift */; };
 		FCB1A2F423A518E2008ED5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */; };
 		FCB1A2F623A518E2008ED5B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */; };
 		FCB1A2FA23A518E4008ED5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		FC971D0A23A65F7900103B35 /* OLFIleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLFIleLoader.swift; sourceTree = "<group>"; };
 		FC971D0D23A67F7600103B35 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resource.bundle; path = outlookTest/Resource.bundle; sourceTree = SOURCE_ROOT; };
 		FC971D1023A6867D00103B35 /* OLContactAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLContactAvatarView.swift; sourceTree = "<group>"; };
+		FC971D1223A6902D00103B35 /* OLImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLImageUtility.swift; sourceTree = "<group>"; };
+		FC971D1423A6AA1000103B35 /* OLTheadSafeRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLTheadSafeRun.swift; sourceTree = "<group>"; };
 		FCB1A2F023A518E2008ED5B5 /* outlookTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = outlookTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				FC971D0A23A65F7900103B35 /* OLFIleLoader.swift */,
+				FC971D1223A6902D00103B35 /* OLImageUtility.swift */,
+				FC971D1423A6AA1000103B35 /* OLTheadSafeRun.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -256,7 +262,9 @@
 				FCB1A32323A54522008ED5B5 /* OLPersonFullNameModel.swift in Sources */,
 				FCB1A2F423A518E2008ED5B5 /* AppDelegate.swift in Sources */,
 				FCB1A2F623A518E2008ED5B5 /* SceneDelegate.swift in Sources */,
+				FC971D1523A6AA1000103B35 /* OLTheadSafeRun.swift in Sources */,
 				FCB1A32523A545DC008ED5B5 /* OLPersonAvatarModel.swift in Sources */,
+				FC971D1323A6902D00103B35 /* OLImageUtility.swift in Sources */,
 				FCB1A32123A543E9008ED5B5 /* OLImageModelProtocol.swift in Sources */,
 				FCB1A31A23A536CE008ED5B5 /* OLPersonInfoModel.swift in Sources */,
 				FC971D1123A6867D00103B35 /* OLContactAvatarView.swift in Sources */,

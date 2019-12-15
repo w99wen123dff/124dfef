@@ -49,4 +49,12 @@ class OLImageModel: NSObject, OLImageModelProtocol{
             }
         }
     }
+    
+    func description() -> String {
+        return "\(self.imagePath)|\(self.imageSourceType)";
+    }
+    
+    override class func hash() -> Int {
+        return self.description().hashValue;
+    }
 }

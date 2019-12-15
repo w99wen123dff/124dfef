@@ -18,4 +18,5 @@ enum OLImageModelSourceType: Int {
 protocol OLImageModelProtocol {
     var imageSourceType: OLImageModelSourceType { get };
     var imagePath: String { get };
+    func description() -> String;
 }
