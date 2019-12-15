@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		FCB1A2F423A518E2008ED5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */; };
 		FCB1A2F623A518E2008ED5B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */; };
-		FCB1A2F823A518E2008ED5B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F723A518E2008ED5B5 /* ContentView.swift */; };
 		FCB1A2FA23A518E4008ED5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */; };
 		FCB1A2FD23A518E4008ED5B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A2FC23A518E4008ED5B5 /* Preview Assets.xcassets */; };
 		FCB1A30023A518E4008ED5B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A2FE23A518E4008ED5B5 /* LaunchScreen.storyboard */; };
+		FCB1A30823A51B48008ED5B5 /* Avatars.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A30723A51B48008ED5B5 /* Avatars.xcassets */; };
+		FCB1A30D23A51E5A008ED5B5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A30C23A51E5A008ED5B5 /* TableViewController.swift */; };
+		FCB1A31123A51F5E008ED5B5 /* OLImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31023A51F5E008ED5B5 /* OLImageModel.swift */; };
+		FCB1A31323A5237A008ED5B5 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A31223A5237A008ED5B5 /* contacts.json */; };
+		FCB1A31A23A536CE008ED5B5 /* OLPersonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31923A536CE008ED5B5 /* OLPersonInfoModel.swift */; };
+		FCB1A31C23A536E7008ED5B5 /* OLPersonInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31B23A536E7008ED5B5 /* OLPersonInfoProtocol.swift */; };
+		FCB1A31E23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31D23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift */; };
+		FCB1A32023A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31F23A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift */; };
+		FCB1A32123A543E9008ED5B5 /* OLImageModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31823A52433008ED5B5 /* OLImageModelProtocol.swift */; };
+		FCB1A32323A54522008ED5B5 /* OLPersonFullNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A32223A54522008ED5B5 /* OLPersonFullNameModel.swift */; };
+		FCB1A32523A545DC008ED5B5 /* OLPersonAvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A32423A545DC008ED5B5 /* OLPersonAvatarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FCB1A2F023A518E2008ED5B5 /* outlookTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = outlookTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FCB1A2F723A518E2008ED5B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCB1A2FC23A518E4008ED5B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FCB1A2FF23A518E4008ED5B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCB1A30123A518E4008ED5B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCB1A30723A51B48008ED5B5 /* Avatars.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Avatars.xcassets; sourceTree = "<group>"; };
+		FCB1A30C23A51E5A008ED5B5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FCB1A31023A51F5E008ED5B5 /* OLImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLImageModel.swift; sourceTree = "<group>"; };
+		FCB1A31223A5237A008ED5B5 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = contacts.json; path = outlookTest/Resource.bundle/contacts.json; sourceTree = SOURCE_ROOT; };
+		FCB1A31823A52433008ED5B5 /* OLImageModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLImageModelProtocol.swift; sourceTree = "<group>"; };
+		FCB1A31923A536CE008ED5B5 /* OLPersonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonInfoModel.swift; sourceTree = "<group>"; };
+		FCB1A31B23A536E7008ED5B5 /* OLPersonInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonInfoProtocol.swift; sourceTree = "<group>"; };
+		FCB1A31D23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonFullNameModelProtocol.swift; sourceTree = "<group>"; };
+		FCB1A31F23A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonAvatarModelProtocol.swift; sourceTree = "<group>"; };
+		FCB1A32223A54522008ED5B5 /* OLPersonFullNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonFullNameModel.swift; sourceTree = "<group>"; };
+		FCB1A32423A545DC008ED5B5 /* OLPersonAvatarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonAvatarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +76,15 @@
 		FCB1A2F223A518E2008ED5B5 /* outlookTest */ = {
 			isa = PBXGroup;
 			children = (
-				FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */,
 				FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */,
-				FCB1A2F723A518E2008ED5B5 /* ContentView.swift */,
+				FCB1A31623A523FE008ED5B5 /* Utility */,
+				FCB1A31523A523F9008ED5B5 /* Common */,
+				FCB1A30E23A51EFB008ED5B5 /* ContactVC */,
 				FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */,
+				FCB1A30723A51B48008ED5B5 /* Avatars.xcassets */,
+				FCB1A30923A51C45008ED5B5 /* APPDelegate */,
 				FCB1A2FE23A518E4008ED5B5 /* LaunchScreen.storyboard */,
+				FCB1A31423A52386008ED5B5 /* Resource.bundle */,
 				FCB1A30123A518E4008ED5B5 /* Info.plist */,
 				FCB1A2FB23A518E4008ED5B5 /* Preview Content */,
 			);
@@ -73,6 +97,60 @@
 				FCB1A2FC23A518E4008ED5B5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FCB1A30923A51C45008ED5B5 /* APPDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */,
+			);
+			path = APPDelegate;
+			sourceTree = "<group>";
+		};
+		FCB1A30E23A51EFB008ED5B5 /* ContactVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCB1A30C23A51E5A008ED5B5 /* TableViewController.swift */,
+				FCB1A30F23A51F08008ED5B5 /* Model */,
+			);
+			path = ContactVC;
+			sourceTree = "<group>";
+		};
+		FCB1A30F23A51F08008ED5B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCB1A31923A536CE008ED5B5 /* OLPersonInfoModel.swift */,
+				FCB1A32423A545DC008ED5B5 /* OLPersonAvatarModel.swift */,
+				FCB1A32223A54522008ED5B5 /* OLPersonFullNameModel.swift */,
+				FCB1A31023A51F5E008ED5B5 /* OLImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FCB1A31423A52386008ED5B5 /* Resource.bundle */ = {
+			isa = PBXGroup;
+			children = (
+				FCB1A31223A5237A008ED5B5 /* contacts.json */,
+			);
+			path = Resource.bundle;
+			sourceTree = "<group>";
+		};
+		FCB1A31523A523F9008ED5B5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FCB1A31823A52433008ED5B5 /* OLImageModelProtocol.swift */,
+				FCB1A31B23A536E7008ED5B5 /* OLPersonInfoProtocol.swift */,
+				FCB1A31D23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift */,
+				FCB1A31F23A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FCB1A31623A523FE008ED5B5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +185,7 @@
 				TargetAttributes = {
 					FCB1A2EF23A518E2008ED5B5 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -133,8 +212,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB1A31323A5237A008ED5B5 /* contacts.json in Resources */,
 				FCB1A30023A518E4008ED5B5 /* LaunchScreen.storyboard in Resources */,
 				FCB1A2FD23A518E4008ED5B5 /* Preview Assets.xcassets in Resources */,
+				FCB1A30823A51B48008ED5B5 /* Avatars.xcassets in Resources */,
 				FCB1A2FA23A518E4008ED5B5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,9 +227,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB1A31123A51F5E008ED5B5 /* OLImageModel.swift in Sources */,
+				FCB1A32323A54522008ED5B5 /* OLPersonFullNameModel.swift in Sources */,
 				FCB1A2F423A518E2008ED5B5 /* AppDelegate.swift in Sources */,
 				FCB1A2F623A518E2008ED5B5 /* SceneDelegate.swift in Sources */,
-				FCB1A2F823A518E2008ED5B5 /* ContentView.swift in Sources */,
+				FCB1A32523A545DC008ED5B5 /* OLPersonAvatarModel.swift in Sources */,
+				FCB1A32123A543E9008ED5B5 /* OLImageModelProtocol.swift in Sources */,
+				FCB1A31A23A536CE008ED5B5 /* OLPersonInfoModel.swift in Sources */,
+				FCB1A30D23A51E5A008ED5B5 /* TableViewController.swift in Sources */,
+				FCB1A32023A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift in Sources */,
+				FCB1A31E23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift in Sources */,
+				FCB1A31C23A536E7008ED5B5 /* OLPersonInfoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"outlookTest/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -294,6 +384,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.outlook.test.outlookTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"outlookTest/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -313,6 +406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.outlook.test.outlookTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
