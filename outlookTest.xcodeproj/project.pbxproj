@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FC971D0923A65A8F00103B35 /* OLContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D0823A65A8F00103B35 /* OLContactViewModel.swift */; };
+		FC971D0B23A65F7900103B35 /* OLFIleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D0A23A65F7900103B35 /* OLFIleLoader.swift */; };
+		FC971D0E23A67F7600103B35 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC971D0D23A67F7600103B35 /* Resource.bundle */; };
+		FC971D1123A6867D00103B35 /* OLContactAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D1023A6867D00103B35 /* OLContactAvatarView.swift */; };
 		FCB1A2F423A518E2008ED5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */; };
 		FCB1A2F623A518E2008ED5B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */; };
 		FCB1A2FA23A518E4008ED5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */; };
@@ -16,7 +19,6 @@
 		FCB1A30823A51B48008ED5B5 /* Avatars.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A30723A51B48008ED5B5 /* Avatars.xcassets */; };
 		FCB1A30D23A51E5A008ED5B5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A30C23A51E5A008ED5B5 /* TableViewController.swift */; };
 		FCB1A31123A51F5E008ED5B5 /* OLImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31023A51F5E008ED5B5 /* OLImageModel.swift */; };
-		FCB1A31323A5237A008ED5B5 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A31223A5237A008ED5B5 /* contacts.json */; };
 		FCB1A31A23A536CE008ED5B5 /* OLPersonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31923A536CE008ED5B5 /* OLPersonInfoModel.swift */; };
 		FCB1A31C23A536E7008ED5B5 /* OLPersonInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31B23A536E7008ED5B5 /* OLPersonInfoProtocol.swift */; };
 		FCB1A31E23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31D23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift */; };
@@ -28,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		FC971D0823A65A8F00103B35 /* OLContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLContactViewModel.swift; sourceTree = "<group>"; };
+		FC971D0A23A65F7900103B35 /* OLFIleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLFIleLoader.swift; sourceTree = "<group>"; };
+		FC971D0D23A67F7600103B35 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resource.bundle; path = outlookTest/Resource.bundle; sourceTree = SOURCE_ROOT; };
+		FC971D1023A6867D00103B35 /* OLContactAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLContactAvatarView.swift; sourceTree = "<group>"; };
 		FCB1A2F023A518E2008ED5B5 /* outlookTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = outlookTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +43,6 @@
 		FCB1A30723A51B48008ED5B5 /* Avatars.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Avatars.xcassets; sourceTree = "<group>"; };
 		FCB1A30C23A51E5A008ED5B5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FCB1A31023A51F5E008ED5B5 /* OLImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLImageModel.swift; sourceTree = "<group>"; };
-		FCB1A31223A5237A008ED5B5 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = contacts.json; path = outlookTest/Resource.bundle/contacts.json; sourceTree = SOURCE_ROOT; };
 		FCB1A31823A52433008ED5B5 /* OLImageModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLImageModelProtocol.swift; sourceTree = "<group>"; };
 		FCB1A31923A536CE008ED5B5 /* OLPersonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonInfoModel.swift; sourceTree = "<group>"; };
 		FCB1A31B23A536E7008ED5B5 /* OLPersonInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonInfoProtocol.swift; sourceTree = "<group>"; };
@@ -67,6 +71,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FC971D0C23A67F6300103B35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC971D0D23A67F7600103B35 /* Resource.bundle */,
+				FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */,
+				FCB1A30723A51B48008ED5B5 /* Avatars.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FC971D0F23A6864800103B35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC971D1023A6867D00103B35 /* OLContactAvatarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FCB1A2E723A518E2008ED5B5 = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +112,9 @@
 				FCB1A31623A523FE008ED5B5 /* Utility */,
 				FCB1A31523A523F9008ED5B5 /* Common */,
 				FCB1A30E23A51EFB008ED5B5 /* ContactVC */,
-				FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */,
-				FCB1A30723A51B48008ED5B5 /* Avatars.xcassets */,
 				FCB1A30923A51C45008ED5B5 /* APPDelegate */,
+				FC971D0C23A67F6300103B35 /* Resources */,
 				FCB1A2FE23A518E4008ED5B5 /* LaunchScreen.storyboard */,
-				FCB1A31423A52386008ED5B5 /* Resource.bundle */,
 				FCB1A30123A518E4008ED5B5 /* Info.plist */,
 				FCB1A2FB23A518E4008ED5B5 /* Preview Content */,
 			);
@@ -121,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB1A30C23A51E5A008ED5B5 /* TableViewController.swift */,
+				FC971D0F23A6864800103B35 /* View */,
 				FC971D0723A6552500103B35 /* ViewModel */,
 				FCB1A30F23A51F08008ED5B5 /* Model */,
 			);
@@ -138,14 +159,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FCB1A31423A52386008ED5B5 /* Resource.bundle */ = {
-			isa = PBXGroup;
-			children = (
-				FCB1A31223A5237A008ED5B5 /* contacts.json */,
-			);
-			path = Resource.bundle;
-			sourceTree = "<group>";
-		};
 		FCB1A31523A523F9008ED5B5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +173,7 @@
 		FCB1A31623A523FE008ED5B5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FC971D0A23A65F7900103B35 /* OLFIleLoader.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -223,11 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCB1A31323A5237A008ED5B5 /* contacts.json in Resources */,
 				FCB1A30023A518E4008ED5B5 /* LaunchScreen.storyboard in Resources */,
 				FCB1A2FD23A518E4008ED5B5 /* Preview Assets.xcassets in Resources */,
 				FCB1A30823A51B48008ED5B5 /* Avatars.xcassets in Resources */,
 				FCB1A2FA23A518E4008ED5B5 /* Assets.xcassets in Resources */,
+				FC971D0E23A67F7600103B35 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +259,8 @@
 				FCB1A32523A545DC008ED5B5 /* OLPersonAvatarModel.swift in Sources */,
 				FCB1A32123A543E9008ED5B5 /* OLImageModelProtocol.swift in Sources */,
 				FCB1A31A23A536CE008ED5B5 /* OLPersonInfoModel.swift in Sources */,
+				FC971D1123A6867D00103B35 /* OLContactAvatarView.swift in Sources */,
+				FC971D0B23A65F7900103B35 /* OLFIleLoader.swift in Sources */,
 				FCB1A30D23A51E5A008ED5B5 /* TableViewController.swift in Sources */,
 				FCB1A32023A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift in Sources */,
 				FCB1A31E23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift in Sources */,

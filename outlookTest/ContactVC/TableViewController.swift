@@ -8,16 +8,16 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-
+class TableViewController: UITableViewController, OLContactViewModelDataSourceProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        OLContactViewModel.sharedInstance().delegate = self;
+        self.title = "Contact";
+    }
+    
+    // MARK: - OLContactViewModelDataSourceProtocol
+    func allDataChanged(datas: [OLPersonInfoProtocol]) {
+        print(datas.count);
     }
 
     // MARK: - Table view data source

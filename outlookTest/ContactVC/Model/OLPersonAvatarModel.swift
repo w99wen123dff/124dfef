@@ -18,6 +18,6 @@ class OLPersonAvatarModel: NSObject, OLPersonAvatarModelProtocol {
     }
     
     init(data: [String:String]) {
-        self.avatar = OLImageModel(imageData: data);
+        self.avatar = OLImageModel(imageData: data, redirectKey: ["imagePath": "avatar_filename"], defaultValue: ["imageSourceType": "0"]);
     }
 }

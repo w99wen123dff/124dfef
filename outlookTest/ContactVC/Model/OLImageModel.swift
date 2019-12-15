@@ -18,19 +18,34 @@ class OLImageModel: NSObject, OLImageModelProtocol{
         self.imagePath = imagePath;
     }
     
-    init(imageData: [String: String]) {
-        if let imagePath = imageData["imagePath"] {
+    convenience init(imageData: [String: String]) {
+        self.init(imageData:imageData, redirectKey:[:]);
+    }
+    
+    convenience init(imageData: [String: String], redirectKey:[String: String]) {
+        self.init(imageData:imageData, redirectKey:redirectKey, defaultValue:[:]);
+    }
+    
+    init(imageData: [String: String], redirectKey:[String: String], defaultValue:[String: String]) {
+        let newImagePath = redirectKey["imagePath"] ?? "imagePath";
+        if let imagePath = imageData[newImagePath] {
             self.imagePath = imagePath;
+        } else {
+            self.imagePath = defaultValue[newImagePath] ?? "";
         }
-        if let imageSourceType = imageData["imageSourceType"] {
-            if let imageSourceTypeIntValue = Int(imageSourceType) {
-                if imageSourceTypeIntValue == 0 {
-                    self.imageSourceType = .OLImageModelSourceTypeLocal;
-                } else if imageSourceTypeIntValue == 1 {
-                    self.imageSourceType = .OLImageModelSourceTypeURL;
-                } else if imageSourceTypeIntValue == 2 {
-                    self.imageSourceType = .OLImageModelSourceTypeIconFont;
-                }
+        
+        let newImageSourceType = redirectKey["imageSourceType"] ?? "imageSourceType";
+        if let imageSourceType = imageData[newImageSourceType], let imageSourceTypeIntValue = Int(imageSourceType)  {
+            if imageSourceTypeIntValue == 0 {
+                self.imageSourceType = .OLImageModelSourceTypeLocal;
+            } else if imageSourceTypeIntValue == 1 {
+                self.imageSourceType = .OLImageModelSourceTypeURL;
+            } else if imageSourceTypeIntValue == 2 {
+                self.imageSourceType = .OLImageModelSourceTypeIconFont;
+            }
+        } else {
+            if let imageSourceType = defaultValue[newImageSourceType], let imageSourceTypeIntValue = Int(imageSourceType) {
+                self.imageSourceType = OLImageModelSourceType(rawValue: imageSourceTypeIntValue) ?? .OLImageModelSourceTypeUnknown;
             }
         }
     }
