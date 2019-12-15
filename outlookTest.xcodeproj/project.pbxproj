@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC971D0923A65A8F00103B35 /* OLContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC971D0823A65A8F00103B35 /* OLContactViewModel.swift */; };
 		FCB1A2F423A518E2008ED5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */; };
 		FCB1A2F623A518E2008ED5B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */; };
 		FCB1A2FA23A518E4008ED5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB1A2F923A518E4008ED5B5 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC971D0823A65A8F00103B35 /* OLContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLContactViewModel.swift; sourceTree = "<group>"; };
 		FCB1A2F023A518E2008ED5B5 /* outlookTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = outlookTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB1A2F323A518E2008ED5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB1A2F523A518E2008ED5B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC971D0723A6552500103B35 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FC971D0823A65A8F00103B35 /* OLContactViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FCB1A2E723A518E2008ED5B5 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB1A30C23A51E5A008ED5B5 /* TableViewController.swift */,
+				FC971D0723A6552500103B35 /* ViewModel */,
 				FCB1A30F23A51F08008ED5B5 /* Model */,
 			);
 			path = ContactVC;
@@ -237,6 +248,7 @@
 				FCB1A30D23A51E5A008ED5B5 /* TableViewController.swift in Sources */,
 				FCB1A32023A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift in Sources */,
 				FCB1A31E23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift in Sources */,
+				FC971D0923A65A8F00103B35 /* OLContactViewModel.swift in Sources */,
 				FCB1A31C23A536E7008ED5B5 /* OLPersonInfoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,4 +24,20 @@ class OLPersonFullNameModel: NSObject, OLPersonFullNameModelProtocol {
         self.lastName = lastName;
         self.defaultFullName = firstName + " " + lastName;
     }
+    
+    init(data: [String:String]) {
+        if let firstName = data["first_name"] {
+            self.firstName = firstName;
+        } else {
+            assert(false, "firstName dont exst");
+        }
+        
+        if let lastName = data["last_name"] {
+            self.lastName = lastName;
+        } else {
+            assert(false, "lastName dont exst");
+        }
+        
+        self.defaultFullName = firstName + " " + lastName;
+    }
 }

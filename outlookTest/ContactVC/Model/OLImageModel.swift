@@ -23,7 +23,15 @@ class OLImageModel: NSObject, OLImageModelProtocol{
             self.imagePath = imagePath;
         }
         if let imageSourceType = imageData["imageSourceType"] {
-            self.imageSourceType = imageSourceType;
+            if let imageSourceTypeIntValue = Int(imageSourceType) {
+                if imageSourceTypeIntValue == 0 {
+                    self.imageSourceType = .OLImageModelSourceTypeLocal;
+                } else if imageSourceTypeIntValue == 1 {
+                    self.imageSourceType = .OLImageModelSourceTypeURL;
+                } else if imageSourceTypeIntValue == 2 {
+                    self.imageSourceType = .OLImageModelSourceTypeIconFont;
+                }
+            }
         }
     }
 }

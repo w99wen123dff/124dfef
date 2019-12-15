@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum OLImageModelSourceType {
-    case OLImageModelSourceTypeUnknown;
+enum OLImageModelSourceType: Int {
+    case OLImageModelSourceTypeUnknown = -1;
     case OLImageModelSourceTypeLocal;
     case OLImageModelSourceTypeURL;
     case OLImageModelSourceTypeIconFont;

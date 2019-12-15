@@ -18,14 +18,22 @@ class OLPersonInfoModel: NSObject, OLPersonInfoProtocol {
     
     var introduction: String = ""
     
-    override init() {
-        self.name =
-    }
-    
     init(name: OLPersonFullNameModelProtocol, avatar: OLPersonAvatarModelProtocol, title: String, introduction: String) {
         self.name = name;
         self.avatar = avatar;
         self.title = title;
         self.introduction = introduction;
+    }
+    
+    init(data: [String:String]) {
+        self.name = OLPersonFullNameModel(data: data);
+        self.avatar = OLPersonAvatarModel(data: data);
+        if let title = data["title"] {
+            self.title = title;
+        }
+        
+        if let introduction = data["introduction"] {
+            self.introduction = introduction;
+        }
     }
 }
