@@ -13,7 +13,7 @@ protocol OLContactViewModelDataSourceProtocol {
 }
 
 class OLContactViewModel: NSObject {
-    private var personInfos:[OLPersonInfoProtocol];
+    private var personInfos:[OLPersonInfoProtocol] = [];
     private let queue: DispatchQueue;
     private var trueDelegate: OLContactViewModelDataSourceProtocol?
     

@@ -9,8 +9,8 @@
 import UIKit
 
 class OLTheadSafeRun: NSObject {
-    static func runOnMainThread(callback: () -> Void) {
-        if Thread.isMainThread() {
+    static func runOnMainThread(callback:@escaping () -> Void) {
+        if Thread.isMainThread {
             callback()
         } else {
             DispatchQueue.main.async {

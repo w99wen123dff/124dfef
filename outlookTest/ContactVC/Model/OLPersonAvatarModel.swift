@@ -9,6 +9,8 @@
 import UIKit
 
 class OLPersonAvatarModel: NSObject, OLPersonAvatarModelProtocol {
+    var showBorderColor: Bool = false;
+    
     var boarderWidth: Float = 4;
     var avatar: OLImageModelProtocol
     var backgroudColor = UIColor.white;

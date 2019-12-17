@@ -13,4 +13,5 @@ protocol OLPersonAvatarModelProtocol {
     var backgroudColor: UIColor { get };
     var boarderColor: UIColor { get };
     var boarderWidth: Float { get };
+    var showBorderColor: Bool { get set };
 }

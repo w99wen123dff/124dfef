@@ -28,6 +28,9 @@
 		FCB1A32123A543E9008ED5B5 /* OLImageModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A31823A52433008ED5B5 /* OLImageModelProtocol.swift */; };
 		FCB1A32323A54522008ED5B5 /* OLPersonFullNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A32223A54522008ED5B5 /* OLPersonFullNameModel.swift */; };
 		FCB1A32523A545DC008ED5B5 /* OLPersonAvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB1A32423A545DC008ED5B5 /* OLPersonAvatarModel.swift */; };
+		FCEE151023A7CDF5009EAA2B /* OLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE150F23A7CDF5009EAA2B /* OLCache.swift */; };
+		FCEE151223A7D9EE009EAA2B /* OLViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE151123A7D9EE009EAA2B /* OLViewExtensions.swift */; };
+		FCEE151423A7DA71009EAA2B /* OLScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE151323A7DA71009EAA2B /* OLScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		FCB1A31F23A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonAvatarModelProtocol.swift; sourceTree = "<group>"; };
 		FCB1A32223A54522008ED5B5 /* OLPersonFullNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonFullNameModel.swift; sourceTree = "<group>"; };
 		FCB1A32423A545DC008ED5B5 /* OLPersonAvatarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLPersonAvatarModel.swift; sourceTree = "<group>"; };
+		FCEE150F23A7CDF5009EAA2B /* OLCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLCache.swift; sourceTree = "<group>"; };
+		FCEE151123A7D9EE009EAA2B /* OLViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLViewExtensions.swift; sourceTree = "<group>"; };
+		FCEE151323A7DA71009EAA2B /* OLScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,9 @@
 				FC971D0A23A65F7900103B35 /* OLFIleLoader.swift */,
 				FC971D1223A6902D00103B35 /* OLImageUtility.swift */,
 				FC971D1423A6AA1000103B35 /* OLTheadSafeRun.swift */,
+				FCEE151123A7D9EE009EAA2B /* OLViewExtensions.swift */,
+				FCEE150F23A7CDF5009EAA2B /* OLCache.swift */,
+				FCEE151323A7DA71009EAA2B /* OLScrollView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -267,12 +276,15 @@
 				FC971D1323A6902D00103B35 /* OLImageUtility.swift in Sources */,
 				FCB1A32123A543E9008ED5B5 /* OLImageModelProtocol.swift in Sources */,
 				FCB1A31A23A536CE008ED5B5 /* OLPersonInfoModel.swift in Sources */,
+				FCEE151223A7D9EE009EAA2B /* OLViewExtensions.swift in Sources */,
 				FC971D1123A6867D00103B35 /* OLContactAvatarView.swift in Sources */,
+				FCEE151023A7CDF5009EAA2B /* OLCache.swift in Sources */,
 				FC971D0B23A65F7900103B35 /* OLFIleLoader.swift in Sources */,
 				FCB1A30D23A51E5A008ED5B5 /* TableViewController.swift in Sources */,
 				FCB1A32023A54311008ED5B5 /* OLPersonAvatarModelProtocol.swift in Sources */,
 				FCB1A31E23A5383E008ED5B5 /* OLPersonFullNameModelProtocol.swift in Sources */,
 				FC971D0923A65A8F00103B35 /* OLContactViewModel.swift in Sources */,
+				FCEE151423A7DA71009EAA2B /* OLScrollView.swift in Sources */,
 				FCB1A31C23A536E7008ED5B5 /* OLPersonInfoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
