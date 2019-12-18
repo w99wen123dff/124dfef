@@ -43,7 +43,8 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
         
         self.tableView.register(OLPersonInfoTableViewCell.self, forCellReuseIdentifier: ViewController.reuseIdentifier);
         self.tableView.OL_top = self.header.OL_bottom
-        self.tableView.backgroundColor = UIColor.gray
+        self.tableView.backgroundColor = UIColor.white
+        self.tableView.separatorStyle = .none;
         self.tableView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -151,5 +152,11 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.view.OL_height - header.OL_bottom;
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.tableView {
+            scrollViewDidScroll(sourceOLScrollView: self.header);
+        }
     }
 }
