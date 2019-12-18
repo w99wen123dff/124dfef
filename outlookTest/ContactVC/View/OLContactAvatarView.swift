@@ -43,11 +43,11 @@ class OLContactAvatarView: UIView {
         if let avatartVO = self.avatartVO {
             self.avatarImageView.frame = CGRect(x: CGFloat(avatartVO.boarderWidth),
                                                 y: CGFloat(avatartVO.boarderWidth),
-                                                width: self.OL_w - CGFloat(avatartVO.boarderWidth * 2),
-                                                height: self.OL_h - CGFloat(avatartVO.boarderWidth * 2));
+                                                width: self.OL_width - CGFloat(avatartVO.boarderWidth * 2),
+                                                height: self.OL_height - CGFloat(avatartVO.boarderWidth * 2));
             let frame = self.avatarImageView.frame;
-            let width = self.avatarImageView.OL_w;
-            let height = self.avatarImageView.OL_h;
+            let width = self.avatarImageView.OL_width;
+            let height = self.avatarImageView.OL_height;
             if let oldOperation = self.operation {
                 oldOperation.invalidate();
                 self.operation = nil;
@@ -83,7 +83,7 @@ class OLContactAvatarView: UIView {
                 if let boraderImage = OLCache.sharedInstance.object(forKey: boraderImageCacheKey(VO: avatartVO)) {
                     self.avatarBoarderImageView.image = boraderImage;
                 } else {
-                    let boraderImage = UIImage.image(size: self.avatarBoarderImageView.frame.size, radius: self.avatarBoarderImageView.OL_w / 2.0, color: avatartVO.boarderColor);
+                    let boraderImage = UIImage.image(size: self.avatarBoarderImageView.frame.size, radius: self.avatarBoarderImageView.OL_width / 2.0, color: avatartVO.boarderColor);
                     OLCache.sharedInstance.setObject(boraderImage, forKey: boraderImageCacheKey(VO: avatartVO));
                     self.avatarBoarderImageView.image = boraderImage;
                 }

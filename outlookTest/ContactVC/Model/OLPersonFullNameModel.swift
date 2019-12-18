@@ -9,11 +9,10 @@
 import UIKit
 
 class OLPersonFullNameModel: NSObject, OLPersonFullNameModelProtocol {
+    
     var firstName: String = ""
     
     var lastName: String = ""
-    
-    var defaultFullName: String = ""
     
     func fullName(separator: String) -> String {
         return firstName + separator + lastName;
@@ -22,7 +21,6 @@ class OLPersonFullNameModel: NSObject, OLPersonFullNameModelProtocol {
     init(firstName: String, lastName: String) {
         self.firstName = firstName;
         self.lastName = lastName;
-        self.defaultFullName = firstName + " " + lastName;
     }
     
     init(data: [String:String]) {
@@ -37,7 +35,5 @@ class OLPersonFullNameModel: NSObject, OLPersonFullNameModelProtocol {
         } else {
             assert(false, "lastName dont exst");
         }
-        
-        self.defaultFullName = firstName + " " + lastName;
     }
 }

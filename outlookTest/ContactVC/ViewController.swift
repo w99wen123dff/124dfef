@@ -14,18 +14,37 @@ let OLHeaderItemViewHeight: CGFloat = 88;
 let OLHeaderAvatarImageViewWidth: CGFloat = 64 + 4 * 2;
 let OLHeaderAvatarImageViewHeight: CGFloat = 64 + 4 * 2;
 
-class TableViewController: UITableViewController, OLContactViewModelDataSourceProtocol, OLScrollViewDelegate {
+class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OLScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     private var header:OLScrollView! = nil;
     private var avatarInfos:[OLPersonAvatarModelProtocol] = [];
+    private var personInfos:[OLPersonInfoProtocol] = [];
     private var lastSelectedIndex: Int = 0
+    private let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 0), style: UITableView.Style.plain);
+    
+    static let reuseIdentifier = "reuseIdentifier";
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Contact";
-        self.header = OLScrollView(frame: CGRect(x: 0, y: 0, width: self.view.OL_w, height: OLHeaderItemViewHeight));
+        var top:CGFloat = 0;
+        if let navigationController = self.navigationController {
+            top = navigationController.navigationBar.frame.origin.y + navigationController.navigationBar.frame.size.height;
+        }
+        self.header = OLScrollView(frame: CGRect(x: 0, y: top, width: self.view.OL_width, height: OLHeaderItemViewHeight));
         self.header.delegate = self as OLScrollViewDelegate;
         self.header.itemSize = CGSize(width: OLHeaderItemViewWidth, height: OLHeaderItemViewHeight);
         self.view.addSubview(self.header);
+        
+        
+        self.tableView.register(OLPersonInfoTableViewCell.self, forCellReuseIdentifier: ViewController.reuseIdentifier);
+        self.tableView.OL_top = self.header.OL_bottom
+        self.tableView.backgroundColor = UIColor.gray
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        self.tableView.OL_height = self.view.OL_height - self.header.OL_bottom;
+        self.view.addSubview(self.tableView);
+        
+        
         OLContactViewModel.sharedInstance().delegate = self;
     }
     
@@ -43,6 +62,8 @@ class TableViewController: UITableViewController, OLContactViewModelDataSourcePr
             avatarInfos.append(personInfo.avatar);
         }
         self.header.avatarInfos = avatarInfos;
+        self.personInfos = datas;
+        self.tableView.reloadData();
     }
     
     //MARK: - OLScrollViewDelegate
@@ -97,69 +118,29 @@ class TableViewController: UITableViewController, OLContactViewModelDataSourcePr
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.personInfos.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.reuseIdentifier, for: indexPath) as! OLPersonInfoTableViewCell;
+        if self.personInfos.count > indexPath.row {
+            let personInfo = self.personInfos[indexPath.row];
+            cell.updateVO(personInfo);
+        }
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false);
+        //TODO:
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.OL_height - header.OL_bottom;
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -77,7 +77,7 @@ class OLScrollView: UIView, UIScrollViewDelegate {
     }
     
     func updateData() {
-        scrollViewContainerView.frame = CGRect(x: 0, y: (frame.size.height - itemSize.height) / 2.0, width: self.OL_w, height: itemSize.height);
+        scrollViewContainerView.frame = CGRect(x: 0, y: (frame.size.height - itemSize.height) / 2.0, width: self.OL_width, height: itemSize.height);
         scrollView.frame = CGRect(x: (frame.size.width - itemSize.width) / 2.0, y: (frame.size.height - itemSize.height) / 2.0, width: itemSize.width, height: itemSize.height);
         if delegate != nil {
             scrollView.contentSize = CGSize(width: itemSize.width * CGFloat(avatarInfos.count), height: itemSize.height)
@@ -118,10 +118,10 @@ class OLScrollView: UIView, UIScrollViewDelegate {
     private func updateItemView(itemView: UIView, index: Int) {
         itemView.isUserInteractionEnabled = true;
         let gestureNameHold = "OLScrollViewItemViewTapGestureRecognizer";
-        let marginLeft = (itemSize.width - itemView.OL_w) / 2.0;
-        let marginTop = (itemSize.height - itemView.OL_h) / 2.0;
-        itemView.OL_x = itemView.OL_x + itemSize.width * CGFloat(index) + marginLeft;
-        itemView.OL_y = itemView.OL_y + marginTop;
+        let marginLeft = (itemSize.width - itemView.OL_width) / 2.0;
+        let marginTop = (itemSize.height - itemView.OL_height) / 2.0;
+        itemView.OL_left = itemView.OL_left + itemSize.width * CGFloat(index) + marginLeft;
+        itemView.OL_top = itemView.OL_top + marginTop;
         var everAdded = false;
         if let gestureRecognizers = itemView.gestureRecognizers {
             for gesture in gestureRecognizers {
