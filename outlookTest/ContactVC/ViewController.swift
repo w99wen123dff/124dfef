@@ -20,7 +20,9 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
     private var personInfos:[OLPersonInfoProtocol] = [];
     private var lastSelectedIndex: Int = 0
     private let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 0), style: UITableView.Style.plain);
-    
+    private var masterView: UIView?;
+    private var headerHittestView: UIView!;
+    private var tableHittestView: UIView!;
     static let reuseIdentifier = "reuseIdentifier";
     
     override func viewDidLoad() {
@@ -38,21 +40,36 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
         self.header = OLScrollView(frame: CGRect(x: 0, y: top, width: self.view.OL_width, height: OLHeaderItemViewHeight));
         self.header.delegate = self as OLScrollViewDelegate;
         self.header.itemSize = CGSize(width: OLHeaderItemViewWidth, height: OLHeaderItemViewHeight);
-        self.view.addSubview(self.header);
+        headerHittestView = OLCustomHitTestView(self.header.frame) { (hittedView) in
+            if hittedView != nil {
+                self.masterView = self.header;
+            }
+        }
+        self.header.frame = headerHittestView.bounds;
+        headerHittestView.addSubview(self.header);
+        self.view.addSubview(headerHittestView);
         
         
         self.tableView.register(OLPersonInfoTableViewCell.self, forCellReuseIdentifier: ViewController.reuseIdentifier);
-        self.tableView.OL_top = self.header.OL_bottom
+        self.tableView.OL_top = headerHittestView.OL_bottom
         self.tableView.backgroundColor = UIColor.white
         self.tableView.separatorStyle = .none;
         self.tableView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never;
         self.tableView.delegate = self;
+        self.tableView.isPagingEnabled = true;
         self.tableView.dataSource = self;
         self.tableView.estimatedRowHeight = 0;
         self.tableView.estimatedSectionFooterHeight = 0;
         self.tableView.estimatedSectionHeaderHeight = 0;
-        self.tableView.OL_height = self.view.OL_height - self.header.OL_bottom;
-        self.view.addSubview(self.tableView);
+        self.tableView.OL_height = self.view.OL_height - headerHittestView.OL_bottom;
+        tableHittestView = OLCustomHitTestView(self.tableView.frame) { (hittedView) in
+            if hittedView != nil {
+                self.masterView = self.tableView;
+            }
+        }
+        self.tableView.frame = tableHittestView.bounds;
+        tableHittestView.addSubview(self.tableView)
+        self.view.addSubview(tableHittestView);
         
         
         OLContactViewModel.sharedInstance().delegate = self;
@@ -98,6 +115,22 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
         }
     }
     
+    func didSelectItems(sourceOLScrollView:OLScrollView, index: Int) {
+        scrollViewSelectAt(sourceOLScrollView, index)
+        sourceOLScrollView.scrollToIndex(index: index, animated: true)
+    }
+    
+    func scrollViewDidScroll(sourceOLScrollView:OLScrollView) {
+        let index = Int(floor(sourceOLScrollView.contentOffset().x / OLHeaderItemViewWidth + 0.5)) ;
+        if index != lastSelectedIndex {
+            scrollViewSelectAt(sourceOLScrollView, index)
+        }
+        if let masterView = self.masterView, masterView == sourceOLScrollView {
+            self.tableView.setContentOffset(CGPoint(x: 0, y: sourceOLScrollView.contentOffset().x * cellHeight() / OLHeaderItemViewWidth), animated: false);
+        }
+    }
+
+    
     fileprivate func scrollViewSelectAt(_ sourceOLScrollView: OLScrollView, _ index: Int) {
         if let view: OLContactAvatarView = sourceOLScrollView.itemViewAt(index: index) as? OLContactAvatarView {
             if avatarInfos.count > index && index >= 0 {
@@ -114,18 +147,6 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
         }
     }
     
-    func didSelectItems(sourceOLScrollView:OLScrollView, index: Int) {
-        scrollViewSelectAt(sourceOLScrollView, index)
-        sourceOLScrollView.scrollToIndex(index: index, animated: true)
-    }
-    
-    func scrollViewDidScroll(sourceOLScrollView:OLScrollView) {
-        let index = Int(floor(sourceOLScrollView.contentOffset().x / OLHeaderItemViewWidth + 0.5)) ;
-        if index != lastSelectedIndex {
-            scrollViewSelectAt(sourceOLScrollView, index)
-        }
-    }
-
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -138,6 +159,7 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.reuseIdentifier, for: indexPath) as! OLPersonInfoTableViewCell;
+        cell.selectionStyle = .none;
         if self.personInfos.count > indexPath.row {
             let personInfo = self.personInfos[indexPath.row];
             cell.updateVO(personInfo);
@@ -147,16 +169,20 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false);
-        //TODO:
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.OL_height - header.OL_bottom;
+        return cellHeight();
+    }
+    
+    
+    func cellHeight() -> CGFloat {
+        self.view.OL_height - headerHittestView.OL_bottom;
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == self.tableView {
-            scrollViewDidScroll(sourceOLScrollView: self.header);
+        if scrollView == self.tableView, let masterView = self.masterView, masterView == self.tableView {
+            self.header.setContentOffset(CGPoint(x: scrollView.contentOffset.y / cellHeight() * OLHeaderItemViewWidth, y: 0), animated: false);
         }
     }
 }

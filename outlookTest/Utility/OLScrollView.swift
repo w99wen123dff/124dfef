@@ -143,6 +143,10 @@ class OLScrollView: UIView, UIScrollViewDelegate {
         self.scrollView.setContentOffset(CGPoint(x: CGFloat(index) * itemSize.width, y: 0), animated: animated)
     }
     
+    func setContentOffset(_ contentOffset: CGPoint, animated: Bool) {
+        self.scrollView.setContentOffset(contentOffset, animated: animated);
+    }
+    
     func contentOffset() -> CGPoint {
         return self.scrollView.contentOffset;
     }
@@ -179,6 +183,8 @@ class OLScrollView: UIView, UIScrollViewDelegate {
         if let delegate = self.delegate {
             delegate.scrollViewDidScroll(sourceOLScrollView: self);
         }
+        
+        scrollView.isTracking
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
