@@ -25,11 +25,16 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white;
+        self.automaticallyAdjustsScrollViewInsets = false;
+        
         self.title = "Contact";
         var top:CGFloat = 0;
         if let navigationController = self.navigationController {
             top = navigationController.navigationBar.frame.origin.y + navigationController.navigationBar.frame.size.height;
         }
+        top += UIApplication.shared.statusBarFrame.size.height;
+        
         self.header = OLScrollView(frame: CGRect(x: 0, y: top, width: self.view.OL_width, height: OLHeaderItemViewHeight));
         self.header.delegate = self as OLScrollViewDelegate;
         self.header.itemSize = CGSize(width: OLHeaderItemViewWidth, height: OLHeaderItemViewHeight);
@@ -39,8 +44,12 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
         self.tableView.register(OLPersonInfoTableViewCell.self, forCellReuseIdentifier: ViewController.reuseIdentifier);
         self.tableView.OL_top = self.header.OL_bottom
         self.tableView.backgroundColor = UIColor.gray
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.OL_height = self.view.OL_height - self.header.OL_bottom;
         self.view.addSubview(self.tableView);
         

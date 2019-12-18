@@ -65,6 +65,7 @@ class OLScrollView: UIView, UIScrollViewDelegate {
         scrollView.isPagingEnabled = true;
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
+        scrollView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never;
         scrollView.clipsToBounds = false;
         scrollView.delegate = self as UIScrollViewDelegate;
         updateData();

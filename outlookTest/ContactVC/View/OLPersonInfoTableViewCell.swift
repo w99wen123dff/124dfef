@@ -17,7 +17,7 @@ class OLPersonInfoTableViewCell: UITableViewCell {
     private let nameLabel = UILabel();
     private let titleLabel = UILabel();
     private let aboutLabel = UILabel();
-    private let detailLabel = UILabel();
+    private let detailLabel = UITextView();
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
@@ -32,7 +32,7 @@ class OLPersonInfoTableViewCell: UITableViewCell {
     func updateVO(_ personInfo: OLPersonInfoProtocol) {
         self.personInfo = personInfo;
         updateNameLabelText();
-        updateTitleLabel()
+        updateTitleLabelText()
         updateDetailLabelText()
     }
     
@@ -40,6 +40,7 @@ class OLPersonInfoTableViewCell: UITableViewCell {
         updateNameLabelFrame()
         updateTitleLabel()
         updateAboutLabel()
+        updateDetailLabel()
     }
     
     
@@ -73,9 +74,18 @@ class OLPersonInfoTableViewCell: UITableViewCell {
     private func updateDetailLabel() {
         detailLabel.OL_top = aboutLabel.OL_bottom + 11;
         detailLabel.OL_left = aboutLabel.OL_left;
+        detailLabel.textAlignment = .left
         detailLabel.OL_width = screenWidth() - detailLabel.OL_left * 2;
         detailLabel.font = UIFont.systemFont(ofSize: 12);
-        detailLabel.numberOfLines = 0;
+        detailLabel.autocorrectionType = UITextAutocorrectionType.no
+//        detailLabel.isUserInteractionEnabled = false;
+        detailLabel.textContainer.lineFragmentPadding = 0;
+        detailLabel.textContainerInset = UIEdgeInsets.zero;
+        detailLabel.isScrollEnabled = false;
+        detailLabel.isEditable = false;
+    }
+    
+    override func layoutSubviews() {
         detailLabel.OL_height = self.contentView.OL_height - detailLabel.OL_top;
     }
     
@@ -118,5 +128,8 @@ class OLPersonInfoTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        detailLabel.backgroundColor = self.contentView.backgroundColor;
+    }
 }

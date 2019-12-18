@@ -16,7 +16,7 @@ extension UIView {
             return self.frame.origin.x
         }
         set(value) {
-            self.frame = CGRect(x: value - self.OL_width, y: self.OL_top, width: self.OL_width, height: self.OL_height)
+            self.frame = CGRect(x: value, y: self.OL_top, width: self.OL_width, height: self.OL_height)
         }
     }
     
@@ -25,7 +25,7 @@ extension UIView {
             return self.frame.origin.x + self.frame.size.width
         }
         set(value) {
-            self.frame = CGRect(x: value, y: self.OL_top, width: self.OL_width, height: self.OL_height)
+            self.frame = CGRect(x: value - self.OL_height, y: self.OL_top, width: self.OL_width, height: self.OL_height)
         }
     }
     
