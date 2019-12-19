@@ -31,7 +31,7 @@ class ViewController: UIViewController, OLContactViewModelDataSourceProtocol, OL
         self.header.delegate = self as OLHeaderComponentProtocl;
         self.header.itemSize = CGSize(width: OLHeaderItemViewWidth, height: OLHeaderItemViewHeight);
         self.view.addSubview(header);
-        
+        OLMasterViewTester.sharedInstance
         
         self.tableView.register(OLPersonInfoTableViewCell.self, forCellReuseIdentifier: reuseIdentifier);
         self.tableView.OL_top = header.OL_bottom

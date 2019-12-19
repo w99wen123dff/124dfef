@@ -13,9 +13,13 @@ class OLMasterViewTester: NSObject, OLEventDispatcherProtocol {
     private var masterView: UIView?;
     static let sharedInstance: OLMasterViewTester = {
         let instance = OLMasterViewTester();
-        OLEventDispatcher.sharedInstance.addEventListener(eventName: "com.ol.action.obtainFirstResponder", listener: instance);
         return instance;
     }()
+    
+    override init() {
+        super.init();
+        OLEventDispatcher.sharedInstance.addEventListener(eventName: "com.ol.action.obtainFirstResponder", listener: self);
+    }
     
     func isViewMasterView(_ testView: UIView) -> Bool {
         return self.masterView == testView;
