@@ -9,7 +9,7 @@
 import UIKit
 
 class OLCache: NSObject {
-    static let sharedInstance = OLCache();
+    static let sharedInstance = self();
     private var kv:[String:UIImage] = [:];
     override init() {
         super.init();
